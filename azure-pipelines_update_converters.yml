@@ -18,5 +18,6 @@ steps:
   inputs:
     versionSpec: '12.x'
   displayName: 'Install Node.js'
+- bash: git config --global user.email "koenkanters94@gmail.com" && git config --global user.name "Zigbee-herdsman-converters Bot"
 - bash: cd zigbee-herdsman-converters && npm version patch
   displayName: 'Bump zigbee-herdsman-converters'
