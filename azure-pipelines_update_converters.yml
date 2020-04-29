@@ -14,10 +14,9 @@ pool:
 steps:
 - checkout: self
 - checkout: zhc
-
 - task: NodeTool@0
   inputs:
     versionSpec: '12.x'
   displayName: 'Install Node.js'
-
-
+- bash: cd zigbee-herdsman-converters && npm version patch
+  displayName: 'Bump zigbee-herdsman-converters'
