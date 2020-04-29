@@ -22,3 +22,4 @@ steps:
 - bash: cd zigbee-herdsman-converters && export ZHC_VERSION=$(npm version patch)
 - bash: |
     cd zigbee2mqtt && sed -i -E 's/.*"zigbee-herdsman-converters".*/\    "zigbee-herdsman-converters": "0.12.0"/' package.json
+- bash: cat zigbee2mqtt/package.json
