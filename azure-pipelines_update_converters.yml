@@ -21,5 +21,5 @@ steps:
 - bash: git config --global user.email "koenkanters94@gmail.com" && git config --global user.name "Zigbee-herdsman-converters Bot"
 - bash: cd zigbee-herdsman-converters && export ZHC_VERSION=$(npm version patch)
 - bash: |
-    cd zigbee2mqtt && sed -i -E 's/.*"zigbee-herdsman-converters".*/\    "zigbee-herdsman-converters": "$ZHC_VERSION"/' package.json
+    cd zigbee2mqtt && sed -i -E 's/.*"zigbee-herdsman-converters".*/\    "zigbee-herdsman-converters": "'"$ZHC_VERSION"''"/' package.json
 - bash: cat zigbee2mqtt/package.json
