@@ -19,8 +19,16 @@ steps:
     versionSpec: '12.x'
   displayName: 'Install Node.js'
 - bash: |
-    git config --global user.email "koenkanters94@gmail.com" && git config --global user.name "Zigbee-herdsman-converters Bot"
+    git config --global user.email "koenkanters94@gmail.com"
+    git config --global user.name "Zigbee-herdsman-converters Bot"
+    git config --global push.followTags true
     cd zigbee-herdsman-converters && export ZHC_VERSION=$(npm version patch)
     echo "New version $ZHC_VERSION"
+    git push
+    sleep 2m
+    cd ../zigbee2mqtt
     npm install zigbee-herdsman-converters@${ZHC_VERSION:1} --save --save-exact
-    cat zigbee2mqtt/package.json
+    rm -rf node_modules npm_shrinkwrap.json 
+    npm install
+    npm shrinkwrap --dev
+    git push
