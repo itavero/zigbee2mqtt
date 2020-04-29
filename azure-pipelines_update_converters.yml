@@ -31,4 +31,4 @@ steps:
     rm -rf node_modules npm_shrinkwrap.json 
     npm install
     npm shrinkwrap --dev
-    git push
+    git push origin HEAD:$(Build.SourceBranchName)
