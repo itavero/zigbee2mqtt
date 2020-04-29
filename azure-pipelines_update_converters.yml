@@ -24,7 +24,7 @@ steps:
     git config --global push.followTags true
     cd zigbee-herdsman-converters && export ZHC_VERSION=$(npm version patch)
     echo "New version $ZHC_VERSION"
-    git push
+    git push origin HEAD:master
     sleep 2m
     cd ../zigbee2mqtt
     npm install zigbee-herdsman-converters@${ZHC_VERSION:1} --save --save-exact
