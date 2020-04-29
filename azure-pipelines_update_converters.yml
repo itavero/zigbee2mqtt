@@ -2,7 +2,7 @@ resources:
   repositories:
   - repository: zhc
     type: github
-    endpoint: MyGitHubServiceConnection
+    endpoint: Koenkk
     name: Koenkk/zigbee-herdsman-converters
 
 trigger: none
